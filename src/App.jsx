@@ -1,36 +1,43 @@
-import { useState } from 'react'
+import './index.css'
 import './App.css'
+import Blue from './Components/Blue.jsx'
+import Red from './Components/Red.jsx'
+import Home from './Components/Home.jsx'
 import {Routes, Route, Link} from "react-router-dom"
-import {Blue} from 'react-router-dom'
-import {Red} from 'react-router-dom'
-import {Home} from "react-router-dom"
 
 function App() {
 
 
   return (
-   
+   <>
      <div id="container">
       
       <div id="navbar">
-        <Link to='/blue'>Blue</Link>
-        <Link to='/red'>Red</Link>
-        <Link to='/'></Link>
+        <Link to="/Home">Home</Link>
+        <Link to="/Blue">Blue</Link>
+        <Link to="/Red">Red</Link>
+        
       </div>
+
       <div id="main-section">
+
         <Routes>
-          <Route path="/blue"
-          element={Blue}
+
+          <Route path="/Blue"
+          element={<Blue />}
           />
-          <Route path="/red"
-          element={Red}
+          <Route path="/Red"
+          element={<Red />}
           />
-            <Route path="/"/>
+            <Route path="/Home"
+            element={<Home />}
+            />
+            
           
         </Routes>
       </div>
     </div>
-   
+    </>
   )
 }
 
